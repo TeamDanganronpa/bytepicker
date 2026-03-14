@@ -6,7 +6,7 @@
 #ifndef BYTEPICKER_BYTEPICKER_H
 #define BYTEPICKER_BYTEPICKER_H
 
-#include "positional/positional_reader.h"
-#include "positional/positional_writer.h"
+#include "bytepicker/positional/positional_reader.h"
+#include "bytepicker/positional/positional_writer.h"
 
 #endif // BYTEPICKER_BYTEPICKER_H
