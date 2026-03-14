@@ -1,0 +1,9 @@
+#ifndef BYTEPICKER_ERROR_H
+#define BYTEPICKER_ERROR_H
+
+// Common errors
+#define BYTEPICKER_ERROR_EOF "EOF"
+#define BYTEPICKER_ERROR_UNKNOWN "UnknownError"
+#define BYTEPICKER_ERROR_INVALID_HANDLE "InvalidHandle"
+
+#endif // BYTEPICKER_ERROR_H
