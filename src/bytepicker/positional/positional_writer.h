@@ -10,5 +10,6 @@ const char* PositionalFileWriter_Write(void* PositionalFileWriter, void* Value, 
 const char* PositionalFileWriter_WriteString(void* PositionalFileWriter, const char* StringBuffer);
 
 const char* PositionalFileWriter_SetPosition(void* PositionalFileWriter, size_t Position);
+size_t PositionalFileWriter_GetPosition(void* PositionalFileWriter);
 
 #endif // BYTEPICKER_POSITIONAL_WRITER_H

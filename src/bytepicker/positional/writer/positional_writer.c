@@ -34,3 +34,23 @@ const char* PositionalFileWriter_WriteString(void* PositionalFileWriter, const c
 	}
 	return NULL;
 }
+
+const char* PositionalFileWriter_SetPosition(void* PositionalFileWriter, size_t NewPosition) {
+	if (!PositionalFileWriter) return BYTEPICKER_ERROR_INVALID_HANDLE;
+
+#ifdef _WIN32
+	_fseeki64(PositionalFileWriter, NewPosition, SEEK_SET);
+#else
+	fseek(PositionalFileWriter, NewPosition, SEEK_SET);
+#endif
+	return NULL;
+}
+
+size_t PositionalFileWriter_GetPosition(void* PositionalFileWriter) {
+	return
+#ifdef _WIN32
+	_ftelli64(PositionalFileWriter);
+#else
+	ftell(PositionalFileWriter);
+#endif
+}

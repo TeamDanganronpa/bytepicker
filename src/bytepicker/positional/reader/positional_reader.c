@@ -38,6 +38,20 @@ const char* PositionalFileReader_ReadString(void* PositionalFileReader, char* St
 
 const char* PositionalFileReader_SetPosition(void* PositionalFileReader, size_t NewPosition) {
 	if (!PositionalFileReader) return BYTEPICKER_ERROR_INVALID_HANDLE;
+
+#ifdef _WIN32
+	_fseeki64(PositionalFileReader, NewPosition, SEEK_SET);
+#else
 	fseek(PositionalFileReader, NewPosition, SEEK_SET);
+#endif
 	return NULL;
+}
+
+size_t  PositionalFileReader_GetPosition(void* PositionalFileReader) {
+	return
+#ifdef _WIN32
+	_ftelli64(PositionalFileReader);
+#else
+	ftell(PositionalFileReader);
+#endif
 }

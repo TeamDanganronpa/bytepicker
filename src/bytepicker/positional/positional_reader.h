@@ -10,5 +10,6 @@ const char* PositionalFileReader_Read(void* PositionalFileReader, void* Buffer, 
 const char* PositionalFileReader_ReadString(void* PositionalFileReader, char* StringBuffer, size_t StringSizeWithoutNullTerminator);
 
 const char* PositionalFileReader_SetPosition(void* PositionalFileReader, size_t NewPosition);
+size_t PositionalFileReader_GetPosition(void* PositionalFileReader);
 
 #endif // BYTEPICKER_POSITIONAL_READER_H
