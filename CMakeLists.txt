@@ -11,7 +11,12 @@ set(CMAKE_COLOR_DIAGNOSTICS ON)
 
 add_library(bytepicker)
 target_include_directories(bytepicker PUBLIC "src")
+target_compile_definitions(bytepicker PUBLIC BYTEPICKER_COMPILATION)
 target_sources(bytepicker PRIVATE
         "src/bytepicker/positional/reader/positional_reader.c"
         "src/bytepicker/positional/writer/positional_writer.c"
 )
+
+if (BUILD_SHARED_LIBS)
+    target_compile_definitions(bytepicker PUBLIC BYTEPICKER_DLL)
+endif ()

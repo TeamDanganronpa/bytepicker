@@ -3,13 +3,15 @@
 
 #include <stddef.h>
 
-void* CreatePositionalFileReader(const char* FilePath);
-void DestroyPositionalFileReader(void* PositionalFileReader);
+#include "bytepicker/dll_api.h"
 
-const char* PositionalFileReader_Read(void* PositionalFileReader, void* Buffer, size_t BufferSize);
-const char* PositionalFileReader_ReadString(void* PositionalFileReader, char* StringBuffer, size_t StringSizeWithoutNullTerminator);
+void* BYTEPICKER_API CreatePositionalFileReader(const char* FilePath);
+void BYTEPICKER_API DestroyPositionalFileReader(void* PositionalFileReader);
 
-const char* PositionalFileReader_SetPosition(void* PositionalFileReader, size_t NewPosition);
-size_t PositionalFileReader_GetPosition(void* PositionalFileReader);
+const char* BYTEPICKER_API PositionalFileReader_Read(void* PositionalFileReader, void* Buffer, size_t BufferSize);
+const char* BYTEPICKER_API PositionalFileReader_ReadString(void* PositionalFileReader, char* StringBuffer, size_t StringSizeWithoutNullTerminator);
+
+const char* BYTEPICKER_API PositionalFileReader_SetPosition(void* PositionalFileReader, size_t NewPosition);
+size_t BYTEPICKER_API PositionalFileReader_GetPosition(void* PositionalFileReader);
 
 #endif // BYTEPICKER_POSITIONAL_READER_H

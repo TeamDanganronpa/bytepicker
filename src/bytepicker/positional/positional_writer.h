@@ -3,13 +3,15 @@
 
 #include <stddef.h>
 
-void* CreatePositionalFileWriter(const char* FilePath);
-void DestroyPositionalFileWriter(void* PositionalFileWriter);
+#include "bytepicker/dll_api.h"
 
-const char* PositionalFileWriter_Write(void* PositionalFileWriter, void* Value, size_t ValueSize);
-const char* PositionalFileWriter_WriteString(void* PositionalFileWriter, const char* StringBuffer);
+void* BYTEPICKER_API CreatePositionalFileWriter(const char* FilePath);
+void BYTEPICKER_API DestroyPositionalFileWriter(void* PositionalFileWriter);
 
-const char* PositionalFileWriter_SetPosition(void* PositionalFileWriter, size_t Position);
-size_t PositionalFileWriter_GetPosition(void* PositionalFileWriter);
+const char* BYTEPICKER_API PositionalFileWriter_Write(void* PositionalFileWriter, void* Value, size_t ValueSize);
+const char* BYTEPICKER_API PositionalFileWriter_WriteString(void* PositionalFileWriter, const char* StringBuffer);
+
+const char* BYTEPICKER_API PositionalFileWriter_SetPosition(void* PositionalFileWriter, size_t Position);
+size_t BYTEPICKER_API PositionalFileWriter_GetPosition(void* PositionalFileWriter);
 
 #endif // BYTEPICKER_POSITIONAL_WRITER_H
